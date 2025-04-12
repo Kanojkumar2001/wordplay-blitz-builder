@@ -31,6 +31,12 @@ const GameQuestion: React.FC<GameQuestionProps> = ({
   // Track selected words
   const [selectedWords, setSelectedWords] = useState<Set<string>>(new Set());
 
+  // Reset state when question changes
+  useEffect(() => {
+    setFilledWords(Array(blankCount).fill(null));
+    setSelectedWords(new Set());
+  }, [question.id, blankCount]);
+
   // Check if we can move to the next question
   const canProceed = filledWords.every(word => word !== null);
 
