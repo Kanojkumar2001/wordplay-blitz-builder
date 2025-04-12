@@ -7,7 +7,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 py-8 px-4">
       <div className="container mx-auto max-w-4xl">
         <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-          Sentence Construction
+          Sentence Construction Challenge
         </h1>
         
         <GameContainer />

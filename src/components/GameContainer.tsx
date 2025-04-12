@@ -1,21 +1,11 @@
-
 import React, { useEffect, useState, useCallback } from 'react';
 import GameQuestion from './GameQuestion';
 import ResultsScreen from './ResultsScreen';
-import { mockQuestions } from '@/data/mockQuestions';
+import { fetchQuestions } from '@/utils/questionsService';
 import { GameState, QuestionResult, SentenceQuestion } from '@/types/game';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-
-// Simulate fetching questions from an API
-const fetchQuestions = (): Promise<SentenceQuestion[]> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mockQuestions);
-    }, 500);
-  });
-};
 
 const GameContainer: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>({
